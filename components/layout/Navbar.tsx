@@ -86,7 +86,10 @@ export function Navbar() {
             <img
               src="/images/logo-jkline-graffiti.svg"
               alt="J-KLINE"
-              className="h-8 sm:h-10 w-auto"
+              width={140}
+              height={32}
+              className="h-8 sm:h-10 w-auto min-w-[100px]"
+              style={{ display: 'block' }}
             />
           </Link>
         </nav>
