@@ -45,10 +45,7 @@ export function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+      <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
             ? "bg-background/95 backdrop-blur-md border-b border-white/10"
@@ -93,7 +90,7 @@ export function Navbar() {
             />
           </Link>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Mobile Menu */}
       <MobileMenu
