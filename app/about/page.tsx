@@ -129,19 +129,6 @@ export default function AboutPage() {
           imagePosition="right"
         />
 
-        {/* Timeline Section */}
-        <Section className="bg-[#0D0D0D]">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-2">
-              The Journey
-            </h2>
-            <p className="text-muted">
-              Key moments that shaped the story.
-            </p>
-          </div>
-          <Timeline milestones={milestones} />
-        </Section>
-
         {/* Photo Gallery Section */}
         <Section className="bg-background">
           <div className="max-w-6xl mx-auto">
