@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import MusicFilters from "@/components/music/MusicFilters";
 import MusicGrid from "@/components/music/MusicGrid";
 import { VideoGrid } from "@/components/video";
+import { GraffitiText, DrippingDivider } from "@/components/effects";
 import { discography } from "@/lib/content/discography";
 import { videos, featuredVideo } from "@/lib/content/videos";
 
@@ -35,9 +36,15 @@ export default function MusicPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <GraffitiText 
+              variant="tag" 
+              color="gold" 
+              size="xl" 
+              as="h1"
+              className="mb-4"
+            >
               Music
-            </h1>
+            </GraffitiText>
             <p className="text-muted max-w-2xl mx-auto">
               From the debut album &quot;Lost In Austin&quot; to the latest singles — 
               explore J-Kline&apos;s discography of hope and redemption.
@@ -60,19 +67,30 @@ export default function MusicPage() {
           {/* Music Grid */}
           <MusicGrid items={filteredItems} />
 
+          {/* Divider */}
+          <DrippingDivider color="gold" className="my-16" animated={false} />
+
           {/* Videos Section */}
           <motion.section
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-20"
+            className="mt-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-              Music Videos
-            </h2>
-            <p className="text-muted max-w-2xl mx-auto text-center mb-10">
-              Watch official music videos and audio tracks from J-Kline.
-            </p>
+            <div className="text-center mb-10">
+              <GraffitiText 
+                variant="stencil" 
+                color="gold" 
+                size="lg" 
+                as="h2"
+                className="mb-4"
+              >
+                Music Videos
+              </GraffitiText>
+              <p className="text-muted max-w-2xl mx-auto">
+                Watch official music videos and audio tracks from J-Kline.
+              </p>
+            </div>
             
             <VideoGrid videos={gridVideos} columns={3} showViews />
           </motion.section>

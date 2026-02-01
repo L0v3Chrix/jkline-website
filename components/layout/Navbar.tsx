@@ -73,9 +73,9 @@ export function Navbar() {
             <Image
               src="/images/logo-jkline-graffiti.svg"
               alt="J-KLINE"
-              width={140}
-              height={25}
-              className="h-6 md:h-7 w-auto"
+              width={160}
+              height={32}
+              className="h-9 md:h-8 w-auto"
               priority
             />
           </Link>

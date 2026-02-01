@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import ContactForm from "@/components/ui/ContactForm";
 import { SocialIconsRow } from "@/components/ui/SocialIcons";
+import { GraffitiText, SprayOverlay } from "@/components/effects";
 import { contactEmail, contactInfo } from "@/lib/content/links";
 import { Mail, MapPin, Send } from "lucide-react";
 
@@ -18,11 +19,20 @@ export default function ContactPage() {
       
       <main className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
-        <Section className="bg-gradient-to-b from-accent/5 to-transparent">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+        <Section className="bg-gradient-to-b from-accent/5 to-transparent relative overflow-hidden">
+          <SprayOverlay intensity="light" color="gold" className="absolute inset-0 pointer-events-none" animated={false}>
+            <div className="absolute inset-0" />
+          </SprayOverlay>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
+            <GraffitiText 
+              variant="tag" 
+              color="gold" 
+              size="xl" 
+              as="h1"
+              className="mb-4"
+            >
               Get In Touch
-            </h1>
+            </GraffitiText>
             <p className="text-lg text-muted max-w-2xl mx-auto">
               Have a question, booking inquiry, or just want to connect? Reach out — let&apos;s start a conversation.
             </p>

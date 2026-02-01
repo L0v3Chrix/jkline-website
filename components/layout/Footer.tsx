@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SocialIconsRow } from "@/components/ui/SocialIcons";
+import { GraffitiText, DrippingDivider } from "@/components/effects";
 import { Heart } from "lucide-react";
 
 export function Footer() {
@@ -17,8 +18,11 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-background border-t border-white/10">
-      <div className="container mx-auto px-6 py-12">
+    <footer className="bg-background relative">
+      {/* Graffiti drip divider at top */}
+      <DrippingDivider color="gold" flip className="absolute -top-4 left-0 right-0" animated={false} />
+      
+      <div className="container mx-auto px-6 py-12 pt-16">
         {/* Newsletter Section */}
         <div className="max-w-md mx-auto text-center mb-10">
           <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -68,10 +72,19 @@ export function Footer() {
           <span className="text-muted/60">(SAMHSA 24/7)</span>
         </div>
 
-        {/* Tagline */}
-        <p className="text-center text-muted/60 text-sm italic mb-4">
-          Voice of Hope. Sound of Redemption.
-        </p>
+        {/* Tagline with graffiti style */}
+        <div className="text-center mb-4">
+          <GraffitiText 
+            variant="outline" 
+            color="gold" 
+            size="sm" 
+            as="span"
+            animated={false}
+            className="!text-lg"
+          >
+            Voice of Hope. Sound of Redemption.
+          </GraffitiText>
+        </div>
 
         {/* Copyright */}
         <p className="text-center text-muted text-sm">

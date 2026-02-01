@@ -6,7 +6,7 @@ import Link from "next/link";
 export const SOCIAL_LINKS = {
   instagram: "https://www.instagram.com/officialjkline/",
   facebook: "https://m.facebook.com/OfficialJKline/",
-  youtube: "https://youtube.com/@officialjkline",
+  youtube: "https://www.youtube.com/@officialjkline",
   spotify: "https://open.spotify.com/artist/61BHscy2iBylZylAjUBjgA",
 } as const;
 

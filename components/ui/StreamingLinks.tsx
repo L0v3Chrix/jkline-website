@@ -18,19 +18,19 @@ const streamingLinks: StreamingLink[] = [
   },
   {
     name: "Apple Music",
-    url: "#",
+    url: "https://music.apple.com/us/artist/j-kline/1461270336",
     icon: <Music2 className="w-5 h-5" />,
     color: "#FA243C",
   },
   {
     name: "YouTube",
-    url: "https://youtube.com/@officialjkline",
+    url: "https://www.youtube.com/@officialjkline",
     icon: <Youtube className="w-5 h-5" />,
     color: "#FF0000",
   },
   {
     name: "Amazon Music",
-    url: "#",
+    url: "https://music.amazon.com/artists/B07R76F4PZ/j-kline",
     icon: <Music className="w-5 h-5" />,
     color: "#00A8E1",
   },

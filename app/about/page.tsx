@@ -1,18 +1,14 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
-import { BioSection } from "@/components/about/BioSection";
+import { VideoHero } from "@/components/about/VideoHero";
+import { StorySection } from "@/components/about/StorySection";
+import { Timeline } from "@/components/about/Timeline";
 import { PressSection } from "@/components/about/PressSection";
 import { RecoveryResources } from "@/components/about/RecoveryResources";
 import { PhotoGallery, GalleryPhoto } from "@/components/about/PhotoGallery";
-import { 
-  longBio, 
-  credentials 
-} from "@/lib/content/bio";
-import { 
-  quotes, 
-  missionStatement 
-} from "@/lib/content/quotes";
+import { fullBio, credentials, milestones } from "@/lib/content/bio";
+import { missionStatement } from "@/lib/content/quotes";
 import { pressFeatures } from "@/lib/content/press";
 import { 
   Award, 
@@ -40,34 +36,114 @@ export const metadata = {
 };
 
 export default function AboutPage() {
-  const featuredQuote = quotes[0];
-
   return (
     <>
       <Navbar />
       
-      <main className="min-h-screen bg-background pt-20">
-        {/* Hero Section */}
-        <Section className="bg-gradient-to-b from-accent/5 to-transparent">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              My Story
-            </h1>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
-              From the depths of addiction to becoming a voice of hope—this is the journey that shaped the music.
+      <main className="min-h-screen bg-background">
+        {/* Video Hero - Using "Last Time" which is about breaking cycles */}
+        <VideoHero
+          videoId="cdYJdgk2pnE"
+          headline="My Story"
+          subheadline="From the depths of addiction to becoming a voice of hope—this is the journey that shaped the music."
+        />
+
+        {/* Chapter 1: Origins */}
+        <StorySection
+          title="The Beginning"
+          content={fullBio.intro}
+          image="/images/about/photo-01.jpg"
+          imageAlt="J-Kline portrait"
+          imagePosition="right"
+        />
+
+        {/* Quote Break */}
+        <StorySection
+          variant="quote"
+          title=""
+          content=""
+          quote={fullBio.tagline}
+          quoteSource="J-Kline"
+        />
+
+        {/* Chapter 2: Finding Hip-Hop */}
+        <StorySection
+          title="Finding My Voice"
+          content={fullBio.origins}
+          image="/images/about/photo-03.jpg"
+          imageAlt="J-Kline performing"
+          imagePosition="left"
+        />
+
+        {/* Full-width image break */}
+        <StorySection
+          variant="full-width"
+          title="Into The Darkness"
+          content="The loss that would shape everything."
+          image="/images/about/photo-05.jpg"
+          imageAlt="J-Kline"
+        />
+
+        {/* Chapter 3: The Darkness */}
+        <StorySection
+          title="The Struggle"
+          content={fullBio.darkness}
+          image="/images/about/photo-07.jpg"
+          imageAlt="J-Kline in studio"
+          imagePosition="right"
+        />
+
+        {/* Quote Break */}
+        <StorySection
+          variant="quote"
+          title=""
+          content=""
+          quote="My mission is to be a voice of hope, courage, and strength. That no matter what you're going through, you can make it out, you can bounce back, and it's never too late."
+          quoteSource="J-Kline"
+        />
+
+        {/* Chapter 4: Redemption */}
+        <StorySection
+          title="The Comeback"
+          content={fullBio.redemption}
+          image="/images/about/photo-04.jpg"
+          imageAlt="J-Kline"
+          imagePosition="left"
+        />
+
+        {/* Full-width image break */}
+        <StorySection
+          variant="full-width"
+          title="Today"
+          content="Every bar carries the weight of experience. Every word is proof that you can come back from anything."
+          image="/images/about/photo-02.jpg"
+          imageAlt="J-Kline in studio"
+        />
+
+        {/* Chapter 5: Today */}
+        <StorySection
+          title="The Mission"
+          content={fullBio.today}
+          image="/images/about/photo-08.jpg"
+          imageAlt="J-Kline performing"
+          imagePosition="right"
+        />
+
+        {/* Timeline Section */}
+        <Section className="bg-[#0D0D0D]">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-2">
+              The Journey
+            </h2>
+            <p className="text-muted">
+              Key moments that shaped the story.
             </p>
           </div>
-        </Section>
-
-        {/* Bio Section */}
-        <Section>
-          <div className="max-w-3xl mx-auto">
-            <BioSection bio={longBio} />
-          </div>
+          <Timeline milestones={milestones} />
         </Section>
 
         {/* Photo Gallery Section */}
-        <Section className="bg-[#0D0D0D]">
+        <Section className="bg-background">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-8">
               <Camera className="w-12 h-12 text-accent mx-auto mb-4" />
@@ -82,38 +158,16 @@ export default function AboutPage() {
           </div>
         </Section>
 
-        {/* Featured Quote */}
-        <Section className="bg-[#0D0D0D]">
-          <div className="max-w-4xl mx-auto text-center">
-            <blockquote className="relative">
-              <span className="absolute -top-8 -left-4 text-8xl text-accent/20 font-serif">
-                "
-              </span>
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-light text-foreground leading-relaxed italic">
-                {featuredQuote.text}
-              </p>
-              <span className="absolute -bottom-16 -right-4 text-8xl text-accent/20 font-serif rotate-180">
-                "
-              </span>
-            </blockquote>
-            {featuredQuote.source && (
-              <p className="text-sm text-muted mt-8">
-                — {featuredQuote.source}, {featuredQuote.date}
-              </p>
-            )}
-          </div>
-        </Section>
-
         {/* Credentials Section */}
-        <Section>
+        <Section className="bg-[#0D0D0D]">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <Award className="w-12 h-12 text-accent mx-auto mb-4" />
               <h2 className="text-3xl font-bold text-foreground mb-2">
-                Credentials & Roles
+                More Than Music
               </h2>
               <p className="text-muted">
-                More than music—a mission to inspire change.
+                A mission to inspire change.
               </p>
             </div>
             
@@ -121,7 +175,7 @@ export default function AboutPage() {
               {credentials.map((credential) => (
                 <div
                   key={credential}
-                  className="flex items-center gap-3 bg-[#1A1A1A] border border-[#333] rounded-lg p-4"
+                  className="flex items-center gap-3 bg-[#1A1A1A] border border-[#333] rounded-lg p-4 hover:border-accent/40 transition-colors"
                 >
                   <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
                   <span className="text-foreground font-medium">{credential}</span>

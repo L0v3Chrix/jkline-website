@@ -4,6 +4,7 @@ import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { SocialIconsRow } from "@/components/ui/SocialIcons";
 import { PressSection } from "@/components/about/PressSection";
+import { GraffitiText, SprayOverlay, DrippingDivider } from "@/components/effects";
 import { shortBio, photoCredits } from "@/lib/content/bio";
 import { pressFeatures, pressKitInfo } from "@/lib/content/press";
 import { streamingLinks, contactEmail } from "@/lib/content/links";
@@ -54,12 +55,21 @@ export default function PressPage() {
 
       <main className="min-h-screen bg-background pt-20">
         {/* Hero Section */}
-        <Section className="bg-gradient-to-b from-accent/10 to-transparent">
-          <div className="max-w-4xl mx-auto text-center">
+        <Section className="bg-gradient-to-b from-accent/10 to-transparent relative overflow-hidden">
+          <SprayOverlay intensity="light" color="gold" className="absolute inset-0 pointer-events-none" animated={false}>
+            <div className="absolute inset-0" />
+          </SprayOverlay>
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <FileText className="w-16 h-16 text-accent mx-auto mb-6" />
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+            <GraffitiText 
+              variant="tag" 
+              color="gold" 
+              size="xl" 
+              as="h1"
+              className="mb-4"
+            >
               Press Kit
-            </h1>
+            </GraffitiText>
             <p className="text-lg text-muted max-w-2xl mx-auto mb-8">
               Everything you need for press coverage, interviews, and features.
               High-res assets, artist bio, and media resources.
@@ -78,6 +88,9 @@ export default function PressPage() {
             </p>
           </div>
         </Section>
+
+        {/* Divider */}
+        <DrippingDivider color="gold" animated={false} />
 
         {/* Bio Section */}
         <Section>
