@@ -67,7 +67,7 @@ const streamingPlatforms = [
 
 export function EgoFeature() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-hidden w-full">
       {/* Spray paint texture background */}
       <SprayOverlay intensity="light" color="gold" className="absolute inset-0 pointer-events-none" animated={false}>
         <div className="absolute inset-0" />
@@ -182,7 +182,7 @@ export function EgoFeature() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               {/* Tagline */}
-              <div className="relative">
+              <div className="relative text-center lg:text-left">
                 <GraffitiText 
                   variant="stencil" 
                   color="white" 
@@ -221,9 +221,9 @@ export function EgoFeature() {
               </div>
 
               {/* Stream Now Buttons */}
-              <div>
+              <div className="text-center lg:text-left">
                 <p className="text-sm text-muted uppercase tracking-wider mb-4">Stream Now</p>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
                   {streamingPlatforms.map((platform) => (
                     <a
                       key={platform.name}
@@ -257,7 +257,7 @@ export function EgoFeature() {
               </div>
 
               {/* CTA */}
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap gap-4 pt-4 justify-center lg:justify-start">
                 <Button href="/music" variant="secondary" size="lg">
                   Explore All Music
                 </Button>

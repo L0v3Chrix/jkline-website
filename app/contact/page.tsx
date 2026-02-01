@@ -17,7 +17,7 @@ export default function ContactPage() {
     <>
       <Navbar />
       
-      <main className="min-h-screen bg-background pt-20">
+      <main className="min-h-screen bg-background pt-20 overflow-x-hidden">
         {/* Hero Section */}
         <Section className="bg-gradient-to-b from-accent/5 to-transparent relative overflow-hidden">
           <SprayOverlay intensity="light" color="gold" className="absolute inset-0 pointer-events-none" animated={false}>

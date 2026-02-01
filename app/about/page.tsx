@@ -40,7 +40,7 @@ export default function AboutPage() {
     <>
       <Navbar />
       
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background overflow-x-hidden">
         {/* Video Hero - Using "Last Time" which is about breaking cycles */}
         <VideoHero
           videoId="cdYJdgk2pnE"

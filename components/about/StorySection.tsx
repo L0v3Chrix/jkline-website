@@ -26,7 +26,7 @@ export function StorySection({
 }: StorySectionProps) {
   if (variant === "full-width" && image) {
     return (
-      <section className="relative w-full">
+      <section className="relative w-full overflow-hidden">
         {/* Full-width image break */}
         <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
           <Image
@@ -88,18 +88,18 @@ export function StorySection({
 
   // Default side-by-side layout
   return (
-    <section className="py-16 md:py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-16 md:py-24 px-4 overflow-hidden">
+      <div className="max-w-6xl mx-auto w-full">
         <div className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${
           imagePosition === "left" ? "md:grid-flow-dense" : ""
         }`}>
           {/* Text Content */}
           <motion.div
-            initial={{ opacity: 0, x: imagePosition === "right" ? -30 : 30 }}
+            initial={{ opacity: 0, x: 0 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className={imagePosition === "left" ? "md:col-start-2" : ""}
+            className={`text-center md:text-left ${imagePosition === "left" ? "md:col-start-2" : ""}`}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-accent mb-6">
               {title}
@@ -116,11 +116,11 @@ export function StorySection({
           {/* Image */}
           {image && (
             <motion.div
-              initial={{ opacity: 0, x: imagePosition === "right" ? 30 : -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className={`relative ${imagePosition === "left" ? "md:col-start-1 md:row-start-1" : ""}`}
+              className={`relative mx-auto md:mx-0 ${imagePosition === "left" ? "md:col-start-1 md:row-start-1" : ""}`}
             >
               <div className="relative aspect-[4/5] rounded-lg overflow-hidden">
                 <Image

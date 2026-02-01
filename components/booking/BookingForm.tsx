@@ -113,7 +113,7 @@ export function BookingForm({ className = "" }: BookingFormProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       onSubmit={handleSubmit}
-      className={`bg-gradient-to-br from-[#1A1A1A] to-[#222] border border-[#333] rounded-lg p-6 sm:p-8 ${className}`}
+      className={`bg-gradient-to-br from-[#1A1A1A] to-[#222] border border-[#333] rounded-lg p-4 sm:p-6 md:p-8 w-full max-w-full ${className}`}
     >
       <div className="flex items-center gap-3 mb-6">
         <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">

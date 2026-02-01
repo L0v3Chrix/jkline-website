@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Navbar />
       
-      <main>
+      <main className="overflow-x-hidden">
         {/* E.G.O. Feature Section - Now the Hero */}
         <section className="relative bg-gradient-to-b from-background via-background/98 to-background">
           <EgoFeature />

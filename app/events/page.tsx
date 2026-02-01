@@ -42,9 +42,9 @@ export default function BookingPage() {
     <>
       <Navbar />
       
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background overflow-x-hidden">
         {/* Hero Section - Video Background Style */}
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden w-full">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
             <Image
@@ -64,7 +64,7 @@ export default function BookingPage() {
           </SprayOverlay>
 
           {/* Hero Content */}
-          <div className="relative z-10 max-w-5xl mx-auto px-4 py-32 text-center">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-32 text-center w-full">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30 rounded-full mb-6">
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm text-accent font-medium">Available for Bookings</span>
