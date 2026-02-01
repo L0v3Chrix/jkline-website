@@ -22,10 +22,11 @@ export function Footer() {
 
   return (
     <footer className="overflow-hidden">
-      {/* Newsletter Section - ABOVE the video */}
+      {/* Top Section - Newsletter, Social, Helpline - ABOVE the video */}
       <div className="bg-background border-t border-white/10">
         <div className="container mx-auto px-4 sm:px-6 py-10">
-          <div className="max-w-md mx-auto text-center">
+          {/* Newsletter */}
+          <div className="max-w-md mx-auto text-center mb-8">
             <h3 className="text-lg font-semibold text-foreground mb-2">
               Stay Connected
             </h3>
@@ -54,13 +55,31 @@ export function Footer() {
               </form>
             )}
           </div>
+
+          {/* Social Icons */}
+          <div className="flex justify-center mb-6">
+            <SocialIconsRow size={24} />
+          </div>
+
+          {/* Recovery Helpline */}
+          <div className="flex items-center justify-center gap-2 text-sm">
+            <Heart className="w-4 h-4 text-accent" />
+            <span className="text-muted/80">Need help?</span>
+            <a 
+              href="tel:1-800-662-4357" 
+              className="text-accent hover:text-accent-hover transition-colors font-medium"
+            >
+              1-800-662-4357
+            </a>
+            <span className="text-muted/60">(SAMHSA 24/7)</span>
+          </div>
         </div>
       </div>
 
       {/* Graffiti drip divider - ABOVE the video section */}
       <DrippingDivider color="gold" className="relative z-10" animated={false} />
 
-      {/* Video Background Section */}
+      {/* Video Background Section - ONLY tagline overlay */}
       <div className="relative">
         {/* YouTube Video Background */}
         <div className="absolute inset-0 w-full h-full overflow-hidden">
@@ -78,46 +97,43 @@ export function Footer() {
             }}
           />
           {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
         
-        <div className="container mx-auto px-4 sm:px-6 py-12 pt-16 relative z-10">
-          {/* Social Icons - AT THE TOP of overlay */}
-          <div className="flex justify-center mb-8">
-            <SocialIconsRow size={24} />
-          </div>
-
-          {/* Recovery Helpline */}
-          <div className="flex items-center justify-center gap-2 mb-6 text-sm">
-            <Heart className="w-4 h-4 text-accent" />
-            <span className="text-muted/80">Need help?</span>
-            <a 
-              href="tel:1-800-662-4357" 
-              className="text-accent hover:text-accent-hover transition-colors font-medium"
-            >
-              1-800-662-4357
-            </a>
-            <span className="text-muted/60">(SAMHSA 24/7)</span>
-          </div>
-
-          {/* Tagline with graffiti style */}
-          <div className="text-center mb-4">
+        <div className="container mx-auto px-4 sm:px-6 py-16 relative z-10">
+          {/* Tagline with graffiti style - ONLY text over video */}
+          <div className="text-center">
             <GraffitiText 
               variant="outline" 
               color="gold" 
               size="sm" 
               as="span"
               animated={false}
-              className="!text-lg"
+              className="!text-lg sm:!text-xl"
             >
               Voice of Hope. Sound of Redemption.
             </GraffitiText>
           </div>
+        </div>
+      </div>
 
-          {/* Copyright */}
-          <p className="text-center text-muted text-sm">
-            © {new Date().getFullYear()} J-Kline. All rights reserved.
-          </p>
+      {/* Bottom bar - Copyright & Credit */}
+      <div className="bg-black/90 border-t border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-muted">
+            <p>© {new Date().getFullYear()} J-Kline. All rights reserved.</p>
+            <p>
+              Built by{" "}
+              <a 
+                href="https://raizethevibe.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-hover transition-colors"
+              >
+                Raize The Vibe
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
