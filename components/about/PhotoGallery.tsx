@@ -87,13 +87,6 @@ export function PhotoGallery({ photos, title, subtitle }: PhotoGalleryProps) {
         ))}
       </div>
 
-      {/* Photo Credits */}
-      <div className="mt-6 text-center text-sm text-muted">
-        <p>
-          Photography by Garrett Stewart (Pics By G), Brock Camp (626Capture) &amp; Legendary Photos
-        </p>
-      </div>
-
       {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedIndex !== null && (

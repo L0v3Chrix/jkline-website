@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 import { SocialIconsRow } from "@/components/ui/SocialIcons";
 import { PressSection } from "@/components/about/PressSection";
 import { GraffitiText, SprayOverlay, DrippingDivider } from "@/components/effects";
-import { shortBio, photoCredits } from "@/lib/content/bio";
+import { shortBio } from "@/lib/content/bio";
 import { pressFeatures, pressKitInfo } from "@/lib/content/press";
 import { streamingLinks, contactEmail } from "@/lib/content/links";
 import Image from "next/image";
@@ -153,17 +153,6 @@ export default function PressPage() {
               </Button>
             </div>
 
-            {/* Photo Credits */}
-            <div className="mt-8 pt-6 border-t border-white/10">
-              <p className="text-sm text-muted text-center">
-                <span className="text-foreground font-medium">
-                  Photo Credits:{" "}
-                </span>
-                {photoCredits
-                  .map((c) => (c.company ? `${c.photographer} (${c.company})` : c.photographer))
-                  .join(" • ")}
-              </p>
-            </div>
           </div>
         </Section>
 
