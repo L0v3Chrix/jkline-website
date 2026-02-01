@@ -13,10 +13,10 @@ export const streamingLinks = {
   amazonMusic: 'https://music.amazon.com/artists/B07R76F4PZ/j-kline',
 };
 
-export const contactEmail = 'Jklinemusic512269@gmail.com';
+export const contactEmail = 'jklinemusicent@gmail.com';
 
 export const contactInfo = {
-  email: 'Jklinemusic512269@gmail.com',
+  email: 'jklinemusicent@gmail.com',
   location: 'Austin, TX',
-  bookingInquiries: 'Jklinemusic512269@gmail.com',
+  bookingInquiries: 'jklinemusicent@gmail.com',
 };

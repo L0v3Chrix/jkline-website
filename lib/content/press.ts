@@ -49,5 +49,5 @@ export const pressKitInfo = {
     'Interview highlights & quotes',
     'Technical rider (for performances)'
   ],
-  requestEmail: 'Jklinemusic512269@gmail.com'
+  requestEmail: 'jklinemusicent@gmail.com'
 };

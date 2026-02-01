@@ -39,7 +39,7 @@ export const bookingTypes = [
 ];
 
 export const bookingInfo = {
-  email: 'Jklinemusic512269@gmail.com',
+  email: 'jklinemusicent@gmail.com',
   responseTime: '24-48 hours',
   availableFor: [
     'Concerts & Festivals',
