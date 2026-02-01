@@ -177,8 +177,8 @@ export default function PressPage() {
               <p className="text-muted">Official J-Kline logo assets</p>
             </div>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              {/* Primary Logo */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Graffiti Logo - Dark BG */}
               <div className="bg-[#1A1A1A] border border-[#333] rounded-xl p-8 text-center">
                 <div className="bg-[#0D0D0D] rounded-lg p-8 mb-6">
                   <Image
@@ -190,10 +190,10 @@ export default function PressPage() {
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Primary Logo (Dark BG)
+                  Graffiti Logo (Dark BG)
                 </h3>
                 <p className="text-sm text-muted mb-4">
-                  Graffiti style, for dark backgrounds
+                  Street art style, for dark backgrounds
                 </p>
                 <a
                   href="/images/logo-jkline-graffiti.svg"
@@ -205,26 +205,58 @@ export default function PressPage() {
                 </a>
               </div>
 
-              {/* Logo on Light */}
+              {/* Clean Logo - Dark BG */}
               <div className="bg-[#1A1A1A] border border-[#333] rounded-xl p-8 text-center">
-                <div className="bg-white rounded-lg p-8 mb-6">
+                <div className="bg-[#0D0D0D] rounded-lg p-8 mb-6">
                   <Image
-                    src="/images/logo-jkline-graffiti.svg"
-                    alt="J-Kline Graffiti Logo"
+                    src="/images/logo-jkline-clean.svg"
+                    alt="J-Kline Clean Logo"
                     width={280}
                     height={50}
-                    className="mx-auto h-12 w-auto invert"
+                    className="mx-auto h-12 w-auto"
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground mb-2">
-                  Logo Preview (Light BG)
+                  Clean Logo (Dark BG)
                 </h3>
                 <p className="text-sm text-muted mb-4">
-                  Inverted for light backgrounds
+                  Professional style, for dark backgrounds
                 </p>
-                <span className="text-sm text-muted/60">
-                  Contact for light version
-                </span>
+                <a
+                  href="/images/logo-jkline-clean.svg"
+                  download="jkline-logo-clean.svg"
+                  className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors text-sm"
+                >
+                  <Download className="w-4 h-4" />
+                  Download SVG
+                </a>
+              </div>
+
+              {/* Clean Logo - Light BG */}
+              <div className="bg-[#1A1A1A] border border-[#333] rounded-xl p-8 text-center">
+                <div className="bg-white rounded-lg p-8 mb-6">
+                  <Image
+                    src="/images/logo-jkline-clean.svg"
+                    alt="J-Kline Clean Logo on Light"
+                    width={280}
+                    height={50}
+                    className="mx-auto h-12 w-auto"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">
+                  Clean Logo (Light BG)
+                </h3>
+                <p className="text-sm text-muted mb-4">
+                  Professional style, for light backgrounds
+                </p>
+                <a
+                  href="/images/logo-jkline-clean.svg"
+                  download="jkline-logo-clean.svg"
+                  className="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors text-sm"
+                >
+                  <Download className="w-4 h-4" />
+                  Download SVG
+                </a>
               </div>
             </div>
           </div>

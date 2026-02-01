@@ -62,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased bg-background text-foreground min-h-screen`}>
+      <body className={`${inter.variable} antialiased bg-background text-foreground min-h-screen overflow-x-hidden`}>
         {children}
         <FloatingListenCTA />
       </body>

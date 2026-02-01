@@ -55,7 +55,7 @@ export function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="container mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           {/* Mobile Menu Button - Left on mobile */}
           <button
             onClick={() => setIsMobileMenuOpen(true)}
@@ -65,22 +65,7 @@ export function Navbar() {
             <Menu size={28} />
           </button>
 
-          {/* Logo */}
-          <Link
-            href="/"
-            className="relative block hover:opacity-90 transition-opacity duration-300"
-          >
-            <Image
-              src="/images/logo-jkline-graffiti.svg"
-              alt="J-KLINE"
-              width={160}
-              height={32}
-              className="h-9 md:h-8 w-auto"
-              priority
-            />
-          </Link>
-
-          {/* Desktop Navigation - Center */}
+          {/* Desktop Navigation - Left */}
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <li key={link.href}>
@@ -95,16 +80,20 @@ export function Navbar() {
             ))}
           </ul>
 
-          {/* Desktop Social Icons - Right */}
-          <div className="hidden md:block">
-            <SocialIconsRow
-              size={20}
-              platforms={["instagram", "youtube", "spotify"]}
+          {/* Logo - Right side */}
+          <Link
+            href="/"
+            className="relative block hover:opacity-90 transition-opacity duration-300"
+          >
+            <Image
+              src="/images/logo-jkline-graffiti.svg"
+              alt="J-KLINE"
+              width={160}
+              height={32}
+              className="h-8 sm:h-9 md:h-8 w-auto max-w-[140px] sm:max-w-none"
+              priority
             />
-          </div>
-
-          {/* Spacer for mobile to balance the layout */}
-          <div className="md:hidden w-[44px]" />
+          </Link>
         </nav>
       </motion.header>
 

@@ -22,7 +22,7 @@ export function Footer() {
       {/* Graffiti drip divider at top */}
       <DrippingDivider color="gold" flip className="absolute -top-4 left-0 right-0" animated={false} />
       
-      <div className="container mx-auto px-6 py-12 pt-16">
+      <div className="container mx-auto px-4 sm:px-6 py-12 pt-16">
         {/* Newsletter Section */}
         <div className="max-w-md mx-auto text-center mb-10">
           <h3 className="text-lg font-semibold text-foreground mb-2">
@@ -35,18 +35,18 @@ export function Footer() {
           {isSubscribed ? (
             <p className="text-accent text-sm">Thanks for subscribing!</p>
           ) : (
-            <form onSubmit={handleSubscribe} className="flex gap-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent transition-colors"
+                className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-foreground placeholder:text-muted/60 focus:outline-none focus:border-accent transition-colors text-base"
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-accent text-background font-semibold rounded-lg hover:bg-accent/90 transition-colors"
+                className="px-6 py-2 bg-accent text-background font-semibold rounded-lg hover:bg-accent/90 transition-colors whitespace-nowrap"
               >
                 Join
               </button>

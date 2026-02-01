@@ -71,7 +71,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed top-0 left-0 h-full w-full max-w-sm bg-background z-50 md:hidden flex flex-col"
+            className="fixed top-0 left-0 h-full w-[85vw] max-w-sm bg-background z-50 md:hidden flex flex-col overflow-y-auto"
           >
             {/* Close Button */}
             <div className="flex justify-start p-6">
