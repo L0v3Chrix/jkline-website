@@ -23,6 +23,20 @@ export function Footer() {
       <DrippingDivider color="gold" flip className="absolute -top-4 left-0 right-0" animated={false} />
       
       <div className="container mx-auto px-4 sm:px-6 py-12 pt-16">
+        {/* Featured Video */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="aspect-video rounded-xl overflow-hidden shadow-2xl shadow-accent/20 border border-accent/20">
+            <iframe
+              src="https://drive.google.com/file/d/1WOxtpbY5K8XzpYUCYbJgN1XEYl1BrPER/preview"
+              width="100%"
+              height="100%"
+              allow="autoplay; encrypted-media"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
+        </div>
+
         {/* Newsletter Section */}
         <div className="max-w-md mx-auto text-center mb-10">
           <h3 className="text-lg font-semibold text-foreground mb-2">
