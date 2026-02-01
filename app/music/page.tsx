@@ -14,7 +14,7 @@ import { videos, featuredVideo } from "@/lib/content/videos";
 type FilterType = "all" | "album" | "single";
 
 export default function MusicPage() {
-  const [activeFilter, setActiveFilter] = useState<FilterType>("all");
+  const [activeFilter, setActiveFilter] = useState<FilterType>("single");
 
   const filteredItems =
     activeFilter === "all"

@@ -10,9 +10,9 @@ interface MusicFiltersProps {
 }
 
 const filters: { value: FilterType; label: string }[] = [
-  { value: "all", label: "All" },
-  { value: "album", label: "Albums" },
   { value: "single", label: "Singles" },
+  { value: "album", label: "Albums" },
+  { value: "all", label: "All" },
 ];
 
 export default function MusicFilters({
