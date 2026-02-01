@@ -91,7 +91,7 @@ export function GraffitiText({
           letterSpacing: "0.02em",
           color: "transparent",
           WebkitTextStroke: `2px ${colors.main}`,
-          textShadow: `0 0 20px ${colors.main}60`,
+          textShadow: `0 0 8px ${colors.main}30`,
         };
       default:
         return {};
