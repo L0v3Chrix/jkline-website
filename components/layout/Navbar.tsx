@@ -88,7 +88,7 @@ export function Navbar() {
               alt="J-KLINE"
               width={140}
               height={32}
-              className="h-8 sm:h-10 w-auto min-w-[100px]"
+              className="h-10 sm:h-12 w-auto min-w-[120px]"
               style={{ display: 'block' }}
             />
           </Link>
