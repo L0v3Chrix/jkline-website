@@ -103,16 +103,16 @@ export function Footer() {
         <div className="container mx-auto px-4 sm:px-6 py-16 relative z-10">
           {/* Tagline with graffiti style - ONLY text over video */}
           <div className="text-center">
-            <GraffitiText 
-              variant="outline" 
-              color="gold" 
-              size="sm" 
-              as="span"
-              animated={false}
-              className="!text-lg sm:!text-xl"
+            <span 
+              className="text-xl sm:text-2xl font-black tracking-wide"
+              style={{
+                fontFamily: "'Impact', 'Arial Black', sans-serif",
+                color: '#D4AF37',
+                textShadow: '2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 0 4px 8px rgba(0,0,0,0.8)',
+              }}
             >
               Voice of Hope. Sound of Redemption.
-            </GraffitiText>
+            </span>
           </div>
         </div>
       </div>
