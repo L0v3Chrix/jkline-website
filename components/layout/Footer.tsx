@@ -5,8 +5,8 @@ import { SocialIconsRow } from "@/components/ui/SocialIcons";
 import { GraffitiText, DrippingDivider } from "@/components/effects";
 import { Heart } from "lucide-react";
 
-// "Come Home" video - different from SocialProof (Runaway) and other sections
-const FOOTER_VIDEO_ID = "7cQ3hOFm8Ts";
+// "Always Knew" video
+const FOOTER_VIDEO_ID = "REGQI3DhGjY";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -57,6 +57,9 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Graffiti drip divider - ABOVE the video section */}
+      <DrippingDivider color="gold" className="relative z-10" animated={false} />
+
       {/* Video Background Section */}
       <div className="relative">
         {/* YouTube Video Background */}
@@ -77,9 +80,6 @@ export function Footer() {
           {/* Dark overlay for text readability */}
           <div className="absolute inset-0 bg-black/60" />
         </div>
-
-        {/* Graffiti drip divider at top */}
-        <DrippingDivider color="gold" flip className="absolute -top-4 left-0 right-0 z-10" animated={false} />
         
         <div className="container mx-auto px-4 sm:px-6 py-12 pt-16 relative z-10">
           {/* Social Icons - AT THE TOP of overlay */}
