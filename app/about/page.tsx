@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/Footer";
 import Section from "@/components/ui/Section";
 import { BioSection } from "@/components/about/BioSection";
 import { PressSection } from "@/components/about/PressSection";
+import { RecoveryResources } from "@/components/about/RecoveryResources";
+import { PhotoGallery, GalleryPhoto } from "@/components/about/PhotoGallery";
 import { 
   longBio, 
   credentials 
@@ -14,8 +16,23 @@ import {
 import { pressFeatures } from "@/lib/content/press";
 import { 
   Award, 
-  CheckCircle 
+  CheckCircle,
+  Camera
 } from "lucide-react";
+
+// Photo gallery data
+const aboutPhotos: GalleryPhoto[] = [
+  { src: "/images/about/photo-01.jpg", alt: "J-Kline performance", credit: "Pics By G" },
+  { src: "/images/about/photo-02.jpg", alt: "J-Kline in studio", credit: "626Capture" },
+  { src: "/images/about/photo-03.jpg", alt: "J-Kline live show", credit: "Legendary Photos" },
+  { src: "/images/about/photo-04.jpg", alt: "J-Kline portrait", credit: "Pics By G" },
+  { src: "/images/about/photo-05.jpg", alt: "J-Kline backstage", credit: "626Capture" },
+  { src: "/images/about/photo-06.jpg", alt: "J-Kline concert", credit: "Legendary Photos" },
+  { src: "/images/about/photo-07.jpg", alt: "J-Kline recording", credit: "Pics By G" },
+  { src: "/images/about/photo-08.jpg", alt: "J-Kline performing", credit: "626Capture" },
+  { src: "/images/about/photo-09.jpg", alt: "J-Kline on stage", credit: "Legendary Photos" },
+  { src: "/images/about/photo-10.jpg", alt: "J-Kline candid", credit: "Pics By G" },
+];
 
 export const metadata = {
   title: "About | J-Kline",
@@ -46,6 +63,22 @@ export default function AboutPage() {
         <Section>
           <div className="max-w-3xl mx-auto">
             <BioSection bio={longBio} />
+          </div>
+        </Section>
+
+        {/* Photo Gallery Section */}
+        <Section className="bg-[#0D0D0D]">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <Camera className="w-12 h-12 text-accent mx-auto mb-4" />
+              <h2 className="text-3xl font-bold text-foreground mb-2">
+                Life &amp; Performances
+              </h2>
+              <p className="text-muted">
+                Moments captured on the journey.
+              </p>
+            </div>
+            <PhotoGallery photos={aboutPhotos} />
           </div>
         </Section>
 
@@ -122,6 +155,11 @@ export default function AboutPage() {
               {missionStatement}
             </p>
           </div>
+        </Section>
+
+        {/* Recovery Resources */}
+        <Section>
+          <RecoveryResources />
         </Section>
       </main>
 

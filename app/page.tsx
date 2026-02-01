@@ -4,6 +4,7 @@ import Section from "@/components/ui/Section";
 import StreamingLinks from "@/components/ui/StreamingLinks";
 import { EgoFeature } from "@/components/home/EgoFeature";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
+import { SocialProof } from "@/components/home/SocialProof";
 import { GraffitiText, DrippingDivider } from "@/components/effects";
 
 export default function Home() {
@@ -43,6 +44,9 @@ export default function Home() {
         <Section className="bg-gradient-to-b from-background/95 to-background">
           <AboutTeaser />
         </Section>
+
+        {/* Social Proof Section */}
+        <SocialProof />
       </main>
 
       <Footer />

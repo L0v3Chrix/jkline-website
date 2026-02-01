@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SocialIconsRow } from "@/components/ui/SocialIcons";
+import { Heart } from "lucide-react";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -52,6 +53,19 @@ export function Footer() {
         {/* Social Icons */}
         <div className="flex justify-center mb-8">
           <SocialIconsRow size={24} />
+        </div>
+
+        {/* Recovery Helpline */}
+        <div className="flex items-center justify-center gap-2 mb-6 text-sm">
+          <Heart className="w-4 h-4 text-accent" />
+          <span className="text-muted/80">Need help?</span>
+          <a 
+            href="tel:1-800-662-4357" 
+            className="text-accent hover:text-accent-hover transition-colors font-medium"
+          >
+            1-800-662-4357
+          </a>
+          <span className="text-muted/60">(SAMHSA 24/7)</span>
         </div>
 
         {/* Tagline */}

@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
   { href: "/contact", label: "Contact" },
+  { href: "/press", label: "Press" },
 ];
 
 const menuVariants = {
