@@ -13,16 +13,12 @@ export function AboutTeaser() {
     <div className="flex flex-col lg:flex-row gap-12 items-center">
       {/* Quote Section */}
       <div className="flex-1 order-2 lg:order-1">
-        <blockquote className="relative">
-          {/* Decorative quote mark */}
-          <span className="absolute -top-6 -left-4 text-8xl text-accent/20 font-serif leading-none">
-            "
-          </span>
-          <p className="text-2xl md:text-3xl font-light text-foreground/90 italic leading-relaxed relative z-10">
-            {featuredQuote.text}
+        <blockquote className="text-center">
+          <p className="text-2xl md:text-3xl font-light text-foreground/90 italic leading-relaxed">
+            "{featuredQuote.text}"
           </p>
           {featuredQuote.source && (
-            <cite className="block mt-4 text-muted not-italic">
+            <cite className="block mt-6 text-muted not-italic">
               — {featuredQuote.source}
               {featuredQuote.date && `, ${featuredQuote.date}`}
             </cite>
