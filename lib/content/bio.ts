@@ -11,7 +11,7 @@ export const fullBio = {
   
   redemption: `April 2018: J-Kline got clean. After five years away from music, he picked up the pen again. He started building something real in Austin's hip-hop scene. Then March 2020 hit—pandemic, job gone. But the worst was coming. In June 2020, he lost his best friend in a tragic lake accident. The grief was unbearable. He relapsed.`,
   
-  today: `October 2021: He got clean again. This time, he hasn't looked back.
+  today: `November 2022: He got clean again. This time, he hasn't looked back.
 
 J-Kline channeled everything—the pain, the loss, the lessons learned the hard way—into "Lost In Austin," his debut album released through College of Hip-Hop Knowledge Records and Sony-Orchard. Now he's working on "The Redemption Tape," his second album and most personal work yet.
 
@@ -52,7 +52,7 @@ export const milestones = [
   { year: 2013, event: "Moved to Austin, Texas", detail: "Seeking a fresh start that wouldn't come easy" },
   { year: 2018, event: "Got clean in April", detail: "Returned to music after 5-year absence" },
   { year: 2020, event: "Lost best friend in tragic lake accident", detail: "June 2020—the grief led to relapse" },
-  { year: 2021, event: "Got clean in October", detail: "Hasn't looked back since" },
+  { year: 2022, event: "Got clean in November", detail: "Hasn't looked back since" },
   { year: 2022, event: "Released 'Lost In Austin'", detail: "Debut album via Sony-Orchard/College of Hip-Hop Knowledge Records" },
   { year: 2024, event: "Working on 'The Redemption Tape'", detail: "Second album, most personal work yet" },
 ];

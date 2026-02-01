@@ -83,8 +83,8 @@ export const timeline: TimelineEvent[] = [
     icon: "💔"
   },
   {
-    year: 2021,
-    month: "October",
+    year: 2022,
+    month: "November",
     title: "Got Clean Again",
     description: "This time, for good. Hasn't looked back since. The pain became purpose.",
     type: 'victory',
@@ -142,7 +142,7 @@ export const keyDates = {
   firstStudio: "2005",
   firstClean: "April 2018",
   friendLost: "June 2020", 
-  sobrietyDate: "October 2021",
+  sobrietyDate: "November 2022",
   debutAlbum: "2022"
 };
 

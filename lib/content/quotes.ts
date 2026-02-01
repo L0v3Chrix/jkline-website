@@ -44,7 +44,7 @@ export const quotes: Quote[] = [
     context: "On the cycle of addiction"
   },
   {
-    text: "October 2021. That's when I got clean. I haven't looked back.",
+    text: "November 2022. That's when I got clean. I haven't looked back.",
     context: "On his sobriety date"
   },
   {
@@ -77,7 +77,7 @@ export const pullQuotes = [
     subtext: "No matter what you're going through"
   },
   {
-    quote: "October 2021",
+    quote: "November 2022",
     subtext: "The day everything changed"
   }
 ];
