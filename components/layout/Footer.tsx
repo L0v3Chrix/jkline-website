@@ -18,25 +18,23 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-background relative">
-      {/* Graffiti drip divider at top */}
-      <DrippingDivider color="gold" flip className="absolute -top-4 left-0 right-0" animated={false} />
-      
-      <div className="container mx-auto px-4 sm:px-6 py-12 pt-16">
-        {/* Featured Video */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <div className="aspect-video rounded-xl overflow-hidden shadow-2xl shadow-accent/20 border border-accent/20">
-            <iframe
-              src="https://drive.google.com/file/d/1WOxtpbY5K8XzpYUCYbJgN1XEYl1BrPER/preview"
-              width="100%"
-              height="100%"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-              className="w-full h-full"
-            />
-          </div>
-        </div>
+    <footer className="relative overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <iframe
+          src="https://drive.google.com/file/d/1WOxtpbY5K8XzpYUCYbJgN1XEYl1BrPER/preview?autoplay=1&mute=1&loop=1"
+          allow="autoplay; encrypted-media"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+          style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+      </div>
 
+      {/* Graffiti drip divider at top */}
+      <DrippingDivider color="gold" flip className="absolute -top-4 left-0 right-0 z-10" animated={false} />
+      
+      <div className="container mx-auto px-4 sm:px-6 py-12 pt-16 relative z-10">
         {/* Newsletter Section */}
         <div className="max-w-md mx-auto text-center mb-10">
           <h3 className="text-lg font-semibold text-foreground mb-2">
