@@ -19,16 +19,23 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
+      {/* YouTube Video Background */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
         <iframe
-          src="https://drive.google.com/file/d/1WOxtpbY5K8XzpYUCYbJgN1XEYl1BrPER/preview?autoplay=1&mute=1&loop=1"
+          src="https://www.youtube.com/embed/REGQI3DhGjY?autoplay=1&mute=1&loop=1&playlist=REGQI3DhGjY&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1"
           allow="autoplay; encrypted-media"
-          className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-          style={{ transform: 'scale(1.5)', transformOrigin: 'center center' }}
+          allowFullScreen
+          className="absolute w-full h-full pointer-events-none"
+          style={{ 
+            top: '50%', 
+            left: '50%', 
+            transform: 'translate(-50%, -50%) scale(1.5)',
+            minWidth: '100%',
+            minHeight: '100%',
+          }}
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Graffiti drip divider at top */}
