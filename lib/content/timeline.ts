@@ -148,9 +148,9 @@ export const keyDates = {
 
 // For animated number displays
 export const stats = {
-  yearsInRecovery: new Date().getFullYear() - 2021,
+  yearsInRecovery: 3,
   yearsWritingMusic: new Date().getFullYear() - 2003,
   firstStudioAge: 14,
   yearsInAddiction: 9,
-  yearsClean: `${new Date().getFullYear() - 2021}+`
+  yearsClean: "3+"
 };
