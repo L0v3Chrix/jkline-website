@@ -80,7 +80,7 @@ export function SocialProof() {
       </div>
 
       {/* Frosted Glass Overlay */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
       
       {/* Additional subtle gradient for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
