@@ -6,6 +6,14 @@
   --muted: #A0A0A0;
   --accent: #D4AF37;
   --accent-hover: #E5C158;
+  
+  /* Graffiti / Street Art colors */
+  --graffiti-blue: #00BFFF;
+  --graffiti-red: #DC3545;
+  --graffiti-grey: #6B7280;
+  --graffiti-dark-grey: #374151;
+  --brick: #3D3D3D;
+  --mortar: #1A1A1A;
 }
 
 @theme inline {
@@ -14,6 +22,9 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-graffiti-blue: var(--graffiti-blue);
+  --color-graffiti-red: var(--graffiti-red);
+  --color-graffiti-grey: var(--graffiti-grey);
   --font-sans: var(--font-inter);
 }
 
@@ -39,4 +50,124 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* ===========================================
+   GRAFFITI / STREET ART TEXTURE UTILITIES
+   =========================================== */
+
+/* Spray paint texture overlay */
+.texture-spray {
+  position: relative;
+}
+
+.texture-spray::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/textures/spray-noise.svg');
+  background-size: 200px 200px;
+  opacity: 0.08;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* Brick wall background */
+.texture-brick {
+  position: relative;
+  background-color: var(--mortar);
+}
+
+.texture-brick::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 23px,
+      var(--mortar) 23px,
+      var(--mortar) 27px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--brick),
+      var(--brick) 48px,
+      var(--mortar) 48px,
+      var(--mortar) 52px
+    );
+  background-size: 100px 50px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Stencil text effect */
+.text-stencil {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px currentColor;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Tag/graffiti text effect */
+.text-tag {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  transform: skewX(-3deg);
+  text-shadow: 
+    3px 3px 0 var(--graffiti-dark-grey),
+    -1px -1px 0 var(--graffiti-dark-grey),
+    1px -1px 0 var(--graffiti-dark-grey),
+    -1px 1px 0 var(--graffiti-dark-grey),
+    4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Drip effect for borders */
+.border-drip {
+  position: relative;
+}
+
+.border-drip::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-image: url('/textures/drip-effect.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+/* Glow effects for neon graffiti look */
+.glow-gold {
+  text-shadow: 
+    0 0 10px var(--accent),
+    0 0 20px var(--accent),
+    0 0 40px var(--accent);
+}
+
+.glow-blue {
+  text-shadow: 
+    0 0 10px var(--graffiti-blue),
+    0 0 20px var(--graffiti-blue),
+    0 0 40px var(--graffiti-blue);
+}
+
+.glow-red {
+  text-shadow: 
+    0 0 10px var(--graffiti-red),
+    0 0 20px var(--graffiti-red),
+    0 0 40px var(--graffiti-red);
+}
+
+/* Grunge/worn edge effect */
+.edge-worn {
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='3'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1 1 1 0'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.04' numOctaves='3'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='discrete' tableValues='1 1 1 1 0'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }

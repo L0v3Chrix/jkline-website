@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <defs>
+    <filter id="stencilEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <!-- Create rough edges like spray paint through stencil -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      <!-- Add slight blur for spray effect -->
+      <feGaussianBlur stdDeviation="0.5"/>
+      <!-- Sharpen edges back -->
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0 0.5 1 1"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="sprayDots">
+      <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" result="dots"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -12"/>
+    </filter>
+  </defs>
+  <rect width="100" height="100" fill="none"/>
+</svg>

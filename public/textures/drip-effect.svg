@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 60" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="dripGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <!-- Base drip line -->
+  <rect x="0" y="0" width="1200" height="3" fill="currentColor"/>
+  <!-- Drips at varying positions and lengths -->
+  <path d="M50,3 Q52,15 50,25 Q48,35 50,42 Q51,48 50,55" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="50" cy="57" rx="3" ry="3" fill="currentColor"/>
+  
+  <path d="M180,3 Q182,10 180,18" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="180" cy="20" rx="2" ry="2" fill="currentColor"/>
+  
+  <path d="M320,3 Q323,20 320,35 Q318,45 320,50" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="320" cy="53" rx="4" ry="3" fill="currentColor"/>
+  
+  <path d="M450,3 Q452,8 450,14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="450" cy="15" rx="2" ry="1.5" fill="currentColor"/>
+  
+  <path d="M580,3 Q583,25 580,45 Q578,52 580,58" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="580" cy="60" rx="3" ry="2" fill="currentColor"/>
+  
+  <path d="M720,3 Q722,12 720,22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="720" cy="24" rx="2.5" ry="2" fill="currentColor"/>
+  
+  <path d="M850,3 Q853,18 850,32 Q848,40 850,48" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <ellipse cx="850" cy="51" rx="3" ry="3" fill="currentColor"/>
+  
+  <path d="M980,3 Q982,8 980,15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <ellipse cx="980" cy="17" rx="2" ry="1.5" fill="currentColor"/>
+  
+  <path d="M1120,3 Q1123,22 1120,40 Q1118,48 1120,55" stroke="currentColor" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="1120" cy="58" rx="4" ry="3" fill="currentColor"/>
+</svg>

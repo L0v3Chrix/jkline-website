@@ -1,10 +1,22 @@
 // Bio & Story
 export { 
   shortBio, 
-  longBio, 
+  longBio,
+  fullBio,
   credentials, 
-  milestones 
+  milestones,
+  supporters,
+  photoCredits
 } from './bio';
+
+// Timeline (for visual About page)
+export {
+  timeline,
+  timelineEras,
+  keyDates,
+  stats,
+  type TimelineEvent
+} from './timeline';
 
 // Music & Discography
 export { 
@@ -34,8 +46,11 @@ export {
 // Quotes & Mission
 export { 
   quotes, 
-  featuredQuote, 
+  featuredQuote,
+  featuredQuotes,
   missionStatement,
+  oneWord,
+  pullQuotes,
   type Quote 
 } from './quotes';
 
@@ -46,3 +61,15 @@ export {
   pressKitInfo,
   type PressFeature 
 } from './press';
+
+// Videos
+export {
+  videos,
+  featuredVideo,
+  musicVideos,
+  audioVideos,
+  allMusicContent,
+  getVideoThumbnail,
+  getEmbedUrl,
+  type Video
+} from './videos';

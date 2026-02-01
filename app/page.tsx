@@ -4,8 +4,9 @@ import Hero from "@/components/ui/Hero";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import StreamingLinks from "@/components/ui/StreamingLinks";
-import { FeaturedRelease } from "@/components/home/FeaturedRelease";
+import { EgoFeature } from "@/components/home/EgoFeature";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
+import { GraffitiText, DrippingDivider } from "@/components/effects";
 
 export default function Home() {
   return (
@@ -35,10 +36,10 @@ export default function Home() {
           </div>
         </Hero>
 
-        {/* Featured Release Section */}
-        <Section className="bg-gradient-to-b from-background to-background/95">
-          <FeaturedRelease />
-        </Section>
+        {/* E.G.O. Feature Section - Hero Treatment */}
+        <section className="relative bg-gradient-to-b from-background via-background/98 to-background">
+          <EgoFeature />
+        </section>
 
         {/* Streaming Platforms Section */}
         <Section className="bg-background/95">
@@ -46,12 +47,21 @@ export default function Home() {
             <p className="text-accent uppercase tracking-widest text-sm mb-2">
               Available On
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <GraffitiText 
+              variant="outline" 
+              color="gold" 
+              size="lg" 
+              as="h2"
+              animated={false}
+            >
               Stream Everywhere
-            </h2>
+            </GraffitiText>
           </div>
           <StreamingLinks useGold />
         </Section>
+
+        {/* Divider */}
+        <DrippingDivider color="gold" animated={false} />
 
         {/* About Teaser Section */}
         <Section className="bg-gradient-to-b from-background/95 to-background">

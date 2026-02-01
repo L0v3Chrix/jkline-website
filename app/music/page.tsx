@@ -6,7 +6,9 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import MusicFilters from "@/components/music/MusicFilters";
 import MusicGrid from "@/components/music/MusicGrid";
+import { VideoGrid } from "@/components/video";
 import { discography } from "@/lib/content/discography";
+import { videos, featuredVideo } from "@/lib/content/videos";
 
 type FilterType = "all" | "album" | "single";
 
@@ -17,6 +19,9 @@ export default function MusicPage() {
     activeFilter === "all"
       ? discography
       : discography.filter((item) => item.type === activeFilter);
+
+  // Get all videos except the featured one for the grid
+  const gridVideos = videos.filter((v) => v.id !== featuredVideo?.id);
 
   return (
     <>
@@ -54,6 +59,23 @@ export default function MusicPage() {
 
           {/* Music Grid */}
           <MusicGrid items={filteredItems} />
+
+          {/* Videos Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-20"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+              Music Videos
+            </h2>
+            <p className="text-muted max-w-2xl mx-auto text-center mb-10">
+              Watch official music videos and audio tracks from J-Kline.
+            </p>
+            
+            <VideoGrid videos={gridVideos} columns={3} showViews />
+          </motion.section>
         </div>
       </main>
       <Footer />
