@@ -85,13 +85,11 @@ export function Navbar() {
             href="/"
             className="relative block hover:opacity-90 transition-opacity duration-300"
           >
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/logo-jkline-graffiti.svg"
               alt="J-KLINE"
-              width={160}
-              height={32}
-              className="h-8 sm:h-9 md:h-8 w-auto max-w-[140px] sm:max-w-none"
-              priority
+              className="h-8 sm:h-10 w-auto"
             />
           </Link>
         </nav>
