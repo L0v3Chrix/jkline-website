@@ -23,6 +23,9 @@ const pressLogos: PressLogo[] = [
   },
 ];
 
+// Video ID for background - "Runaway" performance footage
+const BACKGROUND_VIDEO_ID = "e4yKFWiICTI";
+
 // Stylized text-based logo component
 function PressLogo({ logo, index }: { logo: PressLogo; index: number }) {
   return (
@@ -38,24 +41,24 @@ function PressLogo({ logo, index }: { logo: PressLogo; index: number }) {
       className="group relative flex flex-col items-center justify-center px-6 py-4 sm:px-8 sm:py-5"
     >
       {/* Logo text styled to look like publication logo */}
-      <div className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-muted/50 group-hover:text-accent transition-all duration-300 whitespace-nowrap">
+      <div className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white/70 group-hover:text-accent transition-all duration-300 whitespace-nowrap drop-shadow-lg">
         {logo.name === "Voyage Austin" ? (
           <span className="font-serif italic">
-            <span className="text-accent/60 group-hover:text-accent">Voyage</span>
+            <span className="text-accent/80 group-hover:text-accent">Voyage</span>
             <span className="font-bold not-italic ml-1">AUSTIN</span>
           </span>
         ) : (
           <span className="uppercase tracking-wider">
             <span className="font-black">Shoutout</span>
-            <span className="text-accent/60 group-hover:text-accent font-light">HTX</span>
+            <span className="text-accent/80 group-hover:text-accent font-light">HTX</span>
           </span>
         )}
       </div>
       
       {/* Hover indicator */}
       <div className="flex items-center gap-1 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        <span className="text-xs text-muted/60">Read Feature</span>
-        <ExternalLink className="w-3 h-3 text-muted/60" />
+        <span className="text-xs text-white/70">Read Feature</span>
+        <ExternalLink className="w-3 h-3 text-white/70" />
       </div>
     </motion.a>
   );
@@ -63,8 +66,27 @@ function PressLogo({ logo, index }: { logo: PressLogo; index: number }) {
 
 export function SocialProof() {
   return (
-    <section className="w-full py-12 sm:py-16 bg-gradient-to-b from-transparent via-[#0D0D0D]/50 to-transparent">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative w-full py-16 sm:py-20 overflow-hidden">
+      {/* YouTube Video Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${BACKGROUND_VIDEO_ID}?autoplay=1&mute=1&loop=1&playlist=${BACKGROUND_VIDEO_ID}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
+          className="absolute w-[300%] h-[300%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          style={{ minWidth: "100%", minHeight: "100%" }}
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          title="Background Video"
+        />
+      </div>
+
+      {/* Frosted Glass Overlay */}
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-md" />
+      
+      {/* Additional subtle gradient for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/20" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -73,10 +95,10 @@ export function SocialProof() {
           transition={{ duration: 0.5 }}
           className="text-center mb-8"
         >
-          <p className="text-sm uppercase tracking-[0.2em] text-muted/60 mb-2">
+          <p className="text-sm uppercase tracking-[0.2em] text-white/70 mb-2 drop-shadow-lg">
             Featured In
           </p>
-          <div className="w-12 h-px bg-accent/30 mx-auto" />
+          <div className="w-12 h-px bg-accent/50 mx-auto" />
         </motion.div>
 
         {/* Logos */}
@@ -96,7 +118,7 @@ export function SocialProof() {
         >
           <Link
             href="/press"
-            className="inline-flex items-center gap-2 text-sm text-muted/60 hover:text-accent transition-colors duration-300"
+            className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-accent transition-colors duration-300 drop-shadow-lg"
           >
             View all press features
             <ExternalLink className="w-3.5 h-3.5" />
