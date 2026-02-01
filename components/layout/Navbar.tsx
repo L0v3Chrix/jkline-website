@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import { SocialIconsRow } from "@/components/ui/SocialIcons";
@@ -10,6 +11,7 @@ import { MobileMenu } from "./MobileMenu";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/music", label: "Music" },
+  { href: "/videos", label: "Videos" },
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
   { href: "/contact", label: "Contact" },
@@ -53,12 +55,28 @@ export function Navbar() {
         }`}
       >
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Mobile Menu Button - Left on mobile */}
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden text-foreground hover:text-accent transition-colors p-2"
+            aria-label="Open menu"
+          >
+            <Menu size={28} />
+          </button>
+
           {/* Logo */}
           <Link
             href="/"
-            className="text-2xl font-bold tracking-wider text-foreground hover:text-accent transition-colors duration-300"
+            className="relative block hover:opacity-90 transition-opacity duration-300"
           >
-            J-KLINE
+            <Image
+              src="/images/logo-jkline-graffiti.svg"
+              alt="J-KLINE"
+              width={140}
+              height={25}
+              className="h-6 md:h-7 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation - Center */}
@@ -84,14 +102,8 @@ export function Navbar() {
             />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden text-foreground hover:text-accent transition-colors p-2"
-            aria-label="Open menu"
-          >
-            <Menu size={28} />
-          </button>
+          {/* Spacer for mobile to balance the layout */}
+          <div className="md:hidden w-[44px]" />
         </nav>
       </motion.header>
 

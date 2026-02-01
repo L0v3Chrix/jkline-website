@@ -5,8 +5,7 @@ import { BioSection } from "@/components/about/BioSection";
 import { PressSection } from "@/components/about/PressSection";
 import { 
   longBio, 
-  credentials, 
-  milestones 
+  credentials 
 } from "@/lib/content/bio";
 import { 
   quotes, 
@@ -15,8 +14,7 @@ import {
 import { pressFeatures } from "@/lib/content/press";
 import { 
   Award, 
-  CheckCircle, 
-  Calendar 
+  CheckCircle 
 } from "lucide-react";
 
 export const metadata = {
@@ -96,50 +94,6 @@ export default function AboutPage() {
                   <span className="text-foreground font-medium">{credential}</span>
                 </div>
               ))}
-            </div>
-          </div>
-        </Section>
-
-        {/* Milestones Timeline */}
-        <Section className="bg-[#0D0D0D]">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <Calendar className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h2 className="text-3xl font-bold text-foreground mb-2">
-                Key Moments
-              </h2>
-              <p className="text-muted">
-                The milestones that shaped the journey.
-              </p>
-            </div>
-
-            <div className="relative">
-              {/* Timeline line */}
-              <div className="absolute left-4 top-0 bottom-0 w-px bg-accent/30 hidden sm:block" />
-              
-              <div className="space-y-6">
-                {milestones.map((milestone, index) => (
-                  <div
-                    key={index}
-                    className="flex gap-4 sm:gap-8 items-start"
-                  >
-                    {/* Year dot */}
-                    <div className="hidden sm:flex flex-shrink-0 w-8 items-center justify-center">
-                      <div className="w-3 h-3 bg-accent rounded-full" />
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="flex-1 bg-[#1A1A1A] border border-[#333] rounded-lg p-4">
-                      <span className="text-accent font-bold text-lg">
-                        {milestone.year}
-                      </span>
-                      <p className="text-foreground mt-1">
-                        {milestone.event}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </Section>

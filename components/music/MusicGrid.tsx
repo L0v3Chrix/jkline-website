@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import type { Album } from "@/lib/content/discography";
 
@@ -27,16 +28,28 @@ export default function MusicGrid({ items }: MusicGridProps) {
               }}
               transition={{ duration: 0.2 }}
             >
-              {/* Album artwork placeholder */}
-              <div className="relative aspect-square w-full overflow-hidden bg-[#0D0D0D] flex items-center justify-center">
-                <div className="text-center p-6">
-                  <span className="text-accent text-4xl font-bold">
-                    {item.title.charAt(0)}
-                  </span>
-                  <p className="text-muted text-xs mt-2 uppercase tracking-widest">
-                    {item.type}
-                  </p>
-                </div>
+              {/* Album artwork */}
+              <div className="relative aspect-square w-full overflow-hidden bg-[#0D0D0D]">
+                {item.coverImage ? (
+                  <Image
+                    src={item.coverImage}
+                    alt={`${item.title} cover art`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="flex items-center justify-center h-full">
+                    <div className="text-center p-6">
+                      <span className="text-accent text-4xl font-bold">
+                        {item.title.charAt(0)}
+                      </span>
+                      <p className="text-muted text-xs mt-2 uppercase tracking-widest">
+                        {item.type}
+                      </p>
+                    </div>
+                  </div>
+                )}
                 <motion.div
                   className="absolute inset-0 bg-accent/10"
                   initial={{ opacity: 0 }}

@@ -13,6 +13,7 @@ interface MobileMenuProps {
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/music", label: "Music" },
+  { href: "/videos", label: "Videos" },
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
   { href: "/contact", label: "Contact" },
@@ -20,7 +21,7 @@ const navLinks = [
 
 const menuVariants = {
   closed: {
-    x: "100%",
+    x: "-100%",
     transition: {
       type: "spring" as const,
       stiffness: 400,
@@ -38,7 +39,7 @@ const menuVariants = {
 };
 
 const linkVariants = {
-  closed: { opacity: 0, x: 50 },
+  closed: { opacity: 0, x: -50 },
   open: (i: number) => ({
     opacity: 1,
     x: 0,
@@ -69,10 +70,10 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed top-0 right-0 h-full w-full max-w-sm bg-background z-50 md:hidden flex flex-col"
+            className="fixed top-0 left-0 h-full w-full max-w-sm bg-background z-50 md:hidden flex flex-col"
           >
             {/* Close Button */}
-            <div className="flex justify-end p-6">
+            <div className="flex justify-start p-6">
               <button
                 onClick={onClose}
                 className="text-foreground hover:text-accent transition-colors p-2"
