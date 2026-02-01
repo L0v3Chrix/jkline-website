@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Section from "@/components/ui/Section";
-import { ExternalLink, Package, Bell, Music2, Disc3 } from "lucide-react";
+import { ExternalLink, Package, Bell, Music2, Disc3, Disc, Shirt, Sticker } from "lucide-react";
 import { GraffitiText } from "@/components/effects";
 import { motion } from "framer-motion";
 
@@ -145,9 +145,30 @@ export default function ShopPage() {
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
                 Merch Dropping Soon
               </h2>
-              <p className="text-lg text-accent font-medium mb-2">
+              <p className="text-lg text-accent font-medium mb-4">
                 🚚 Shipment on the way
               </p>
+              
+              {/* Product previews */}
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                  <Disc className="w-4 h-4 text-accent" />
+                  <span className="text-sm text-foreground">CDs</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                  <Disc3 className="w-4 h-4 text-accent" />
+                  <span className="text-sm text-foreground">Vinyl</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                  <Shirt className="w-4 h-4 text-accent" />
+                  <span className="text-sm text-foreground">T-Shirts</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10">
+                  <Sticker className="w-4 h-4 text-accent" />
+                  <span className="text-sm text-foreground">Stickers</span>
+                </div>
+              </div>
+              
               <p className="text-muted mb-8 max-w-md mx-auto">
                 Official J-Kline gear is coming. Be the first to know when it drops.
               </p>
