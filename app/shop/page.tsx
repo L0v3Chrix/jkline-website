@@ -35,11 +35,26 @@ export default function ShopPage() {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleNotify = (e: React.FormEvent) => {
+  const handleNotify = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Merch notification signup:", email);
-    setIsSubscribed(true);
-    setEmail("");
+    try {
+      await fetch(process.env.NEXT_PUBLIC_FORMS_API_URL || '', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          formType: 'shopNotify',
+          email: email,
+          interest: 'merch'
+        }),
+        mode: 'no-cors'
+      });
+      setIsSubscribed(true);
+      setEmail("");
+    } catch (error) {
+      console.error('Shop notify error:', error);
+      setIsSubscribed(true);
+      setEmail("");
+    }
   };
 
   return (
