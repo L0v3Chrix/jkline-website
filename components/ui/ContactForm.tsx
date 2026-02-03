@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Button from "./Button";
+import { submitContactForm } from "@/lib/api/forms";
 
 interface FormData {
   name: string;
@@ -26,6 +27,8 @@ export default function ContactForm({ className = "" }: { className?: string }) 
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -48,16 +51,28 @@ export default function ContactForm({ className = "" }: { className?: string }) 
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
 
     if (!validate()) return;
 
-    // Log to console for now (no backend yet)
-    console.log("Contact Form Submission:", formData);
+    setIsSubmitting(true);
 
-    setSubmitted(true);
-    setFormData({ name: "", email: "", type: "general", message: "" });
+    try {
+      const result = await submitContactForm(formData);
+      
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", type: "general", message: "" });
+      } else {
+        setSubmitError(result.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      setSubmitError("An unexpected error occurred. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -80,6 +95,12 @@ export default function ContactForm({ className = "" }: { className?: string }) 
 
   return (
     <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
+      {submitError && (
+        <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-md">
+          <p className="text-sm text-red-500">{submitError}</p>
+        </div>
+      )}
+
       {/* Name */}
       <div>
         <label
@@ -93,7 +114,8 @@ export default function ContactForm({ className = "" }: { className?: string }) 
           id="name"
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors disabled:opacity-50"
           placeholder="Your name"
         />
         {errors.name && (
@@ -114,7 +136,8 @@ export default function ContactForm({ className = "" }: { className?: string }) 
           id="email"
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors disabled:opacity-50"
           placeholder="your@email.com"
         />
         {errors.email && (
@@ -139,7 +162,8 @@ export default function ContactForm({ className = "" }: { className?: string }) 
               type: e.target.value as FormData["type"],
             })
           }
-          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors disabled:opacity-50"
         >
           <option value="general">General Inquiry</option>
           <option value="booking">Booking</option>
@@ -160,7 +184,8 @@ export default function ContactForm({ className = "" }: { className?: string }) 
           rows={5}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
+          disabled={isSubmitting}
+          className="w-full px-4 py-3 bg-[#1A1A1A] border border-[#333] rounded-md text-foreground placeholder:text-muted focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none disabled:opacity-50"
           placeholder="Your message..."
         />
         {errors.message && (
@@ -169,8 +194,14 @@ export default function ContactForm({ className = "" }: { className?: string }) 
       </div>
 
       {/* Submit */}
-      <Button type="submit" variant="primary" size="lg" className="w-full">
-        Send Message
+      <Button 
+        type="submit" 
+        variant="primary" 
+        size="lg" 
+        className="w-full"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? "Sending..." : "Send Message"}
       </Button>
     </form>
   );

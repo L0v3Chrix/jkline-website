@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle, Calendar, MapPin, Users, Mic } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { eventTypes } from "./EventTypeSelector";
+import { submitBookingForm } from "@/lib/api/forms";
 
 interface FormData {
   name: string;
@@ -69,12 +70,20 @@ export function BookingForm({ className = "" }: BookingFormProps) {
 
     setIsSubmitting(true);
     
-    // Simulate submission (replace with actual API call)
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    console.log("Booking Inquiry:", formData);
-    setIsSubmitting(false);
-    setSubmitted(true);
+    try {
+      const result = await submitBookingForm(formData);
+      
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        // Show error to user (you may want to add a state for this)
+        console.error("Booking submission failed:", result.error);
+      }
+    } catch (error) {
+      console.error("Booking submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (field: keyof FormData, value: string) => {
